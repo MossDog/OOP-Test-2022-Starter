@@ -94,10 +94,11 @@ public class NematodeVisualiser extends PApplet
 	public void draw()
 	{	
 		background(0);
-		stroke(0, 100, 100);
 		noFill();
 		
 		for(int i = 0; i < nems.get(nemNum).len; i++){
+			
+			stroke(map(i, 0, nems.get(nemNum).len, 0, 360), 100, 100);
 
 			circle(width/2, height/3 + (i * 50), 50);
 
@@ -107,13 +108,18 @@ public class NematodeVisualiser extends PApplet
 				line(width/2 - 25, height/3 + (i * 50), width/2 - 50, height/3 + (i * 50));
 			}
 
-			if(nems.get(nemNum).gender.equals("m")){
-				if(i == nems.get(nemNum).len - 1){
-					System.out.println("bruhbruh");
-					line(width/2, height/3 + (i * 50) + 25, width/2, height/3 + (i * 50) + 50);
-				}
+			if(nems.get(nemNum).gender.equals("m") && i == nems.get(nemNum).len - 1){
+				line(width/2, height/3 + (i * 50) + 25, width/2, height/3 + (i * 50) + 50);
+				circle(width/2, height/3 + (i * 50) + 55, 10);
 			}
-
+			else if(nems.get(nemNum).gender.equals("f") && i == nems.get(nemNum).len - 1){
+				circle(width/2, height/3 + (i * 50), 10);
+			}
+			else if(nems.get(nemNum).gender.equals("h") && i == nems.get(nemNum).len - 1){
+				line(width/2, height/3 + (i * 50) + 25, width/2, height/3 + (i * 50) + 50);
+				circle(width/2, height/3 + (i * 50) + 55, 10);
+				circle(width/2, height/3 + (i * 50), 10);
+			}
 		}
 	}
 }
