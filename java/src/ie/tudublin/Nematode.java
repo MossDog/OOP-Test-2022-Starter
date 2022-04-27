@@ -3,15 +3,16 @@ package ie.tudublin;
 public class Nematode {
 
     NematodeVisualiser viz;
-    String name, len, limbs, gender, eyes;
+    String name, limbs, gender, eyes;
+    int len;
 
     
-    public Nematode(String name, String terms, String terms2, String terms3, String terms4, NematodeVisualiser viz){
+    public Nematode(String name, int len, String limbs, String gender, String eyes, NematodeVisualiser viz){
         this.name = name;
-        this.len = terms;
-        this.limbs = terms2;
-        this.gender = terms3;
-        this.eyes = terms4;
+        this.len = len;
+        this.limbs = limbs;
+        this.gender = gender;
+        this.eyes = eyes;
         this.viz = viz;
     }
 
