@@ -123,7 +123,7 @@ public class NematodeVisualiser extends PApplet
 				circle(width/2, height/3 + (i * 50), 10);
 			}
 			
-			//display eyes
+			/* //display eyes (unfinished)
 			if(nems.get(nemNum).eyes.equals("1") && i == 0){
 				translate(0, 0);
 
@@ -132,7 +132,7 @@ public class NematodeVisualiser extends PApplet
 
 				rotate(radians(315));
 				line(width/2 - 25, height/3 + (i * 50), width/2 - 50, height/3 + (i * 50));
-			}
+			} */
 		}
 	}
 }
