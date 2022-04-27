@@ -102,12 +102,14 @@ public class NematodeVisualiser extends PApplet
 
 			circle(width/2, height/3 + (i * 50), 50);
 
+			//display nematode with correct length
 			if(nems.get(nemNum).limbs.equals("1")){
 				//System.out.println("'" + nems.get(nemNum).limbs + "'");
 				line(width/2 + 25, height/3 + (i * 50), width/2 + 50, height/3 + (i * 50));
 				line(width/2 - 25, height/3 + (i * 50), width/2 - 50, height/3 + (i * 50));
 			}
 
+			//apply gender effects
 			if(nems.get(nemNum).gender.equals("m") && i == nems.get(nemNum).len - 1){
 				line(width/2, height/3 + (i * 50) + 25, width/2, height/3 + (i * 50) + 50);
 				circle(width/2, height/3 + (i * 50) + 55, 10);
@@ -119,6 +121,17 @@ public class NematodeVisualiser extends PApplet
 				line(width/2, height/3 + (i * 50) + 25, width/2, height/3 + (i * 50) + 50);
 				circle(width/2, height/3 + (i * 50) + 55, 10);
 				circle(width/2, height/3 + (i * 50), 10);
+			}
+			
+			//display eyes
+			if(nems.get(nemNum).eyes.equals("1") && i == 0){
+				translate(0, 0);
+
+				rotate(radians(-45));
+				line(width/2 + 25, height/3 + (i * 50), width/2 + 50, height/3 + (i * 50));
+
+				rotate(radians(315));
+				line(width/2 - 25, height/3 + (i * 50), width/2 - 50, height/3 + (i * 50));
 			}
 		}
 	}
